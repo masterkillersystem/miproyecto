@@ -2,10 +2,10 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Control de Aulas</h1>
+            <h1 class="h3 mb-0 text-gray-800">Control de Zonas</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>dashboard_admin">Inicio</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Control de Aulas</li>
+              <li class="breadcrumb-item active" aria-current="page">Control de Zonas</li>
             </ol>
           </div>
 
@@ -16,15 +16,15 @@
             <div class="col-lg-12">
 
               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Distritos</h6>
-                <button class="m-0 float-right btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalCenter" >Nuevo Distrito<i
+                <h6 class="m-0 font-weight-bold text-primary">Zonas</h6>
+                <button class="m-0 float-right btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalCenter" >Nueva Zona<i
                     class="fas fa-plus"></i></button>
               </div>
 
               <div class="card mb-4">
 
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Distritos En Ruta</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Zonas En Ruta</h6>
                 </div>
 
 
@@ -34,7 +34,7 @@
                     <thead class="thead-light">
                       <tr>
                           <th>Sn</th>
-                          <th>Distrito</th>
+                          <th>Zonas</th>
                           <th>Descripcion</th>
                           <th>Estado</th>
                           <th>Accion</th>
@@ -43,14 +43,14 @@
 
                     <tbody>
                       <?php $i = 1; ?>
-                      <?php if(!empty($distrito)):?>
-                      <?php foreach($distrito as $dist):?>
+                      <?php if(!empty($zona)):?>
+                      <?php foreach($zona as $zonas):?>
                     <tr>
                       <td><?php echo $i++; ?></td>
-                      <td><?php echo $dist->nom_distrito;?></td>
-                      <td><?php echo $dist->descripcion;?></td>
+                      <td><?php echo $zonas->nom_zona;?></td>
+                      <td><?php echo $zonas->descripcion;?></td>
                       <td>
-                        <?php if ($dist->estado > 0): ?>
+                        <?php if ($zonas->estado > 0): ?>
                           <button class="btn btn-lg btn-success btn-sm active"><span>Activo</span></button>
                         <?php else: ?>
                           <button class="btn btn-lg btn-danger btn-sm active"><span>Inactivo</span></button>
@@ -58,9 +58,9 @@
                       </td>
                       <td>
 
-        <a href="<?php echo base_url();?>administracion/aula/editar" class=" btn btn-primary btn-sm" data-toggle="modal" data-target="#editAula"><i class="fas fa-edit"></i></a>
+        <a href="<?php echo base_url();?>administracion/zona/editar" class=" btn btn-primary btn-sm" data-toggle="modal" data-target="#editAula"><i class="fas fa-edit"></i></a>
 
-        <a href="<?php echo base_url();?>administrador/distritos/eliminar/<?php echo $dist->id_distrito;?>" onClick="return confirm('Desea Desactivar el Distrito <?php echo $dist->nom_distrito; ?>?')" class="btn btn-danger btn-sm"><span class="fas fa-fw fa-trash-alt"></span></a>
+        <a href="<?php echo base_url();?>administrador/zona/eliminar/<?php echo $zonas->id_zona;?>" onClick="return confirm('Desea Desactivar la Zona <?php echo $zonas->nom_zona; ?>?')" class="btn btn-danger btn-sm"><span class="fas fa-fw fa-trash-alt"></span></a>
 
                       </td>
                     </tr>
@@ -84,16 +84,16 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalCenterTitle">Registro de Zonas</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <form action="<?php echo base_url();?>administrador/distritos/guardar" method="POST">
+              <form action="<?php echo base_url();?>administrador/zona/guardar" method="POST">
                   <div class="form-group <?php echo form_error('nombre') ? 'has-error' : '' ?>">
-                    <label class="control-label"> Nombre del Distrito:</label>
-                    <input name="nombre" placeholder="Nuevo Distrito" class="form-control">
+                    <label class="control-label"> Nombre de la Zona:</label>
+                    <input name="nombre" placeholder="Nueva Zona" class="form-control">
                   </div>
 
                   <div class="form-group <?php echo form_error('descripcion') ? 'has-error' : '' ?>">

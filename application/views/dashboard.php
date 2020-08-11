@@ -14,18 +14,18 @@
       <!-- Earnings (Monthly) Card Example -->
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card h-100">
-          <div class="card-body">
+          <div class="card-body bg-secondary">
             <div class="row align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-uppercase mb-1">Docentes</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">5151</div>
+                <div class="text-xs font-weight-bold text-uppercase mb-1 text-white"><h6>Funcionarios</h6></div>
+                <div class="h5 mb-0 font-weight-bold text-white">5151</div>
                 <div class="mt-2 mb-0 text-muted text-xs">
-                  <span class="text-success mr-2"><i class="fa fa-chalkboard-teacher"></i> 3.48%</span>
+                  <span class="text-success mr-2"><img src="assets/img/funcionario.png" style="max-width: 20px"></img> 3.48%</span>
                   <span>Nivel de Progreso</span>
                 </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-chalkboard-teacher fa-3x text-primary"></i>
+                <img src="assets/img/funcionario.png" style="max-width: 60px"></img>
               </div>
             </div>
           </div>
@@ -34,18 +34,18 @@
       <!-- Earnings (Annual) Card Example -->
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card h-100">
-          <div class="card-body">
+          <div class="card-body bg-primary">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-uppercase mb-1">Estudiantes</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">515151</div>
+                <div class="text-xs font-weight-bold text-uppercase mb-1 text-white"><h6>Inspectores</h6></div>
+                <div class="h5 mb-0 font-weight-bold text-white"><?php echo $num_inspector; ?></div>
                 <div class="mt-2 mb-0 text-muted text-xs">
-                  <span class="text-success mr-2"><i class="fas fa-user-graduate"></i> 12%</span>
+                  <span class="text-success mr-2"><img src="assets/img/inspector.png" style="max-width: 20px"></img> 12%</span>
                   <span>Nivel de Progreso</span>
                 </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-user-graduate fa-3x text-success"></i>
+                <img src="assets/img/inspector.png" style="max-width: 60px"></img>
               </div>
             </div>
           </div>
@@ -54,18 +54,18 @@
       <!-- New User Card Example -->
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card h-100">
-          <div class="card-body">
+          <div class="card-body bg-success">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-uppercase mb-1">Pagos Pendientes</div>
-                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">366</div>
+                <div class="text-xs font-weight-bold text-uppercase mb-1 text-white"><h6>Reclamos Atendidos</h6></div>
+                <div class="h5 mb-0 mr-3 font-weight-bold text-white"><?php echo $atendidos; ?></div>
                 <div class="mt-2 mb-0 text-muted text-xs">
-                  <span class="text-success mr-2"><i class="fas fa-id-badge"></i> 20.4%</span>
+                  <span class="text-success mr-2"><img src="assets/img/atendidos.png" style="max-width: 20px"> 20.4%</span>
                   <span>Nivel de Progreso</span>
                 </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-id-badge fa-3x text-info"></i>
+                <img src="assets/img/atendidos.png" style="max-width: 60px">
               </div>
             </div>
           </div>
@@ -74,18 +74,18 @@
       <!-- Pending Requests Card Example -->
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card h-100">
-          <div class="card-body">
+          <div class="card-body bg-warning">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-uppercase mb-1">Tutores</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
+                <div class="text-xs font-weight-bold text-uppercase mb-1 text-white"><h6>Reclamos Sin Atender</h6></div>
+                <div class="h5 mb-0 font-weight-bold text-white"><?php echo $sin_atender; ?></div>
                 <div class="mt-2 mb-0 text-muted text-xs">
-                  <span class="text-danger mr-2"><i class="fas fa-restroom"></i> 1.10%</span>
+                  <span class="text-danger mr-2"><img src="assets/img/sinatender.png" style="max-width: 20px"> 1.10%</span>
                   <span>Nivel de Asistencia</span>
                 </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-restroom fa-3x text-warning"></i>
+                <img src="assets/img/sinatender.png" style="max-width: 60px">
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@
       <div class="col-xl-8 col-lg-7">
         <div class="card mb-4">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-pie-chart"></i>Grafico de Pagos de Cuotas</h6>
+            <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-map-marked-alt"></i>Grafico de Pagos de Cuotas</h6>
             <div class="dropdown no-arrow">
               <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -114,7 +114,7 @@
           </div>
           <div class="card-body">
 
-              <canvas id="pagosAlumno"></canvas>
+
 
           </div>
         </div>
@@ -124,11 +124,11 @@
       <div class="col-xl-4 col-lg-5">
         <div class="card mb-4">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-poll"></i> Grafico de Estudiantes por Genero</h6>
+            <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-image fa-1x"></i> Galeria de Imagenes Inspeccionadas</h6>
             <div class="dropdown no-arrow">
               <a class="dropdown-toggle btn btn-primary btn-sm" href="#" role="button" id="dropdownMenuLink"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Month <i class="fas fa-chevron-down"></i>
+                Opciones <i class="fas fa-chevron-down"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                 aria-labelledby="dropdownMenuLink">
@@ -141,8 +141,25 @@
             </div>
           </div>
 
-          <div id="contenedor_grafic" class="card-body">
-              <canvas id="generoAlumno"></canvas>
+          <div id="#" class="card-body">
+                              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="assets/img/img1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/img/img2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                  </div>
           </div>
 
           <div class="card-footer text-center">

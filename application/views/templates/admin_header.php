@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="#" rel="icon">
-  <title>RuangAdmin - Dashboard</title>
+  <link href="<?= base_url() ?>assets/img/logo/logo.png" rel="icon">
+  <title>Dgir El Alto</title>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvWXMYiXMmbTA5Womhg-lMCmHHrzZxDaU"></script>
+
   <!-- Para mostra los IConos fontawesome-free-->
   <link href="<?php echo base_url();?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <!-- Para los estilos Bootstrap4-->
@@ -24,9 +27,12 @@
   <link href="<?php echo base_url();?>assets/css/main.css" rel="stylesheet">
   <!-- Para los estilos del Formulario de Validaciones con jquery-->
   <link href="<?php echo base_url();?>assets/css/jquery.steps.css" rel="stylesheet">
+
 </head>
 
+
 <body id="page-top">
+
 
   <?php if (!$this->session->userdata('admin_id')) {
      redirect("login");
@@ -62,13 +68,13 @@
       <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
       		<div class="sidebar-brand-icon">
-      			<img src="<?php echo base_url();?>assets/img/logo/school.png" style="max-width: 50px">
+      			<img src="<?php echo base_url();?>assets/img/logo/recycle.png" style="max-width: 50px">
       		</div>
-      		<div class="h5 sidebar-brand-text mx-3">Sgsa Admin</div>
+      		<div class="h5 sidebar-brand-text mx-3">Degir-Admin</div>
       	</a>
       	<hr class="sidebar-divider my-0">
       	<li class="nav-item active">
-      		<a class="nav-link" href="<?php echo base_url(); ?>dashboard_admin">
+      		<a class="nav-link" href="<?php echo base_url(); ?>dashboard">
       			<i class="fas fa-fw fa-home text-gray-100"></i>
       			<span class="text-gray-100">Dashboard</span></a>
       	</li>
@@ -89,9 +95,9 @@
       		</div>
       	</li>
       	<li class="nav-item">
-      		<a class="nav-link" href="<?php echo base_url();?>administracion/asignacion_docente">
+      		<a class="nav-link" href="<?php echo base_url();?>administrador/Mapa">
       			<i class="fas fa-address-card text-gray-100"></i>
-      			<span class="text-gray-100">Reclamos Asignados</span>
+      			<span class="text-gray-100">Acopios Geolocalizados</span>
       		</a>
       	</li>
 
@@ -114,19 +120,13 @@
       		</div>
       	</li>
         <li class="nav-item">
-      		<a class="nav-link" href="<?php echo base_url(); ?>administracion/matricula">
+      		<a class="nav-link" href="<?php echo base_url(); ?>administrador/inspectores">
       			<i class="fas fa-id-card text-gray-100"></i>
-      			<span class="text-gray-100">Funcionarios Asignados</span>
-      		</a>
-      	</li>
-      	<li class="nav-item">
-      		<a class="nav-link" href="<?php echo base_url(); ?>administracion/matricula">
-      			<i class="fas fa-id-card text-gray-100"></i>
-      			<span class="text-gray-100">Rutas</span>
+      			<span class="text-gray-100">Grupo de Inspectores</span>
       		</a>
       	</li>
         <li class="nav-item">
-      		<a class="nav-link" href="<?php echo base_url(); ?>administracion/tutor">
+      		<a class="nav-link" href="<?php echo base_url(); ?>administrador/zona">
       			<i class="fas fa-id-card text-gray-100"></i>
       			<span class="text-gray-100">Grupo de Zonas</span>
       		</a>
@@ -135,23 +135,14 @@
 
 
       	<li class="nav-item">
-      		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
-      			aria-controls="collapseTable">
+      		<a class="nav-link" href="<?php echo base_url(); ?>administrador/observaciones">
       			<i class="fas fa-university text-gray-100"></i>
       			<span class="text-gray-100">Grupo de Observacion</span>
       		</a>
-      		<div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
-      			<div class="bg-white py-2 collapse-inner rounded">
-      				<h6 class="collapse-header">Tables</h6>
-      				<a class="collapse-item" href="<?php echo base_url(); ?>administracion/area">Puntos de Reclamo</a>
-      				<a class="collapse-item" href="<?php echo base_url(); ?>administracion/aula">Observaciones por Inspector</a>
-      				<a class="collapse-item" href="<?php echo base_url(); ?>administracion/asignatura">Estado Observaciones</a>
-              <a class="collapse-item" href="<?php echo base_url(); ?>administracion/carrera">Reportes</a>
-      			</div>
-      		</div>
+
       	</li>
       	<li class="nav-item">
-      		<a class="nav-link" href="<?php echo base_url(); ?>administracion/gestion">
+      		<a class="nav-link" href="<?php echo base_url(); ?>administrador/subobservaciones">
       			<i class="fas fa-fw fa-clipboard text-gray-100"></i>
       			<span class="text-gray-100">Sub Observaciones</span>
       		</a>

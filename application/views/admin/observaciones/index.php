@@ -2,10 +2,10 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Control de Aulas</h1>
+            <h1 class="h3 mb-0 text-gray-800">Control de las Observaciones</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>dashboard_admin">Inicio</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Control de Aulas</li>
+              <li class="breadcrumb-item active" aria-current="page">Control de las Observaciones</li>
             </ol>
           </div>
 
@@ -16,15 +16,15 @@
             <div class="col-lg-12">
 
               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Distritos</h6>
-                <button class="m-0 float-right btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalCenter" >Nuevo Distrito<i
+                <h6 class="m-0 font-weight-bold text-primary">Observaciones</h6>
+                <button class="m-0 float-right btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalCenter" >Nueva Observacion<i
                     class="fas fa-plus"></i></button>
               </div>
 
               <div class="card mb-4">
 
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Distritos En Ruta</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Observaciones En Ruta</h6>
                 </div>
 
 
@@ -34,8 +34,7 @@
                     <thead class="thead-light">
                       <tr>
                           <th>Sn</th>
-                          <th>Distrito</th>
-                          <th>Descripcion</th>
+                          <th>Observaciones</th>
                           <th>Estado</th>
                           <th>Accion</th>
                       </tr>
@@ -43,14 +42,13 @@
 
                     <tbody>
                       <?php $i = 1; ?>
-                      <?php if(!empty($distrito)):?>
-                      <?php foreach($distrito as $dist):?>
+                      <?php if(!empty($obs)):?>
+                      <?php foreach($obs as $observacion):?>
                     <tr>
                       <td><?php echo $i++; ?></td>
-                      <td><?php echo $dist->nom_distrito;?></td>
-                      <td><?php echo $dist->descripcion;?></td>
+                      <td><?php echo $observacion->nom_observaciones;?></td>
                       <td>
-                        <?php if ($dist->estado > 0): ?>
+                        <?php if ($observacion->estado > 0): ?>
                           <button class="btn btn-lg btn-success btn-sm active"><span>Activo</span></button>
                         <?php else: ?>
                           <button class="btn btn-lg btn-danger btn-sm active"><span>Inactivo</span></button>
@@ -58,9 +56,9 @@
                       </td>
                       <td>
 
-        <a href="<?php echo base_url();?>administracion/aula/editar" class=" btn btn-primary btn-sm" data-toggle="modal" data-target="#editAula"><i class="fas fa-edit"></i></a>
+        <a href="<?php echo base_url();?>administrador/observaciones/editar" class=" btn btn-primary btn-sm" data-toggle="modal" data-target="#editAula"><i class="fas fa-edit"></i></a>
 
-        <a href="<?php echo base_url();?>administrador/distritos/eliminar/<?php echo $dist->id_distrito;?>" onClick="return confirm('Desea Desactivar el Distrito <?php echo $dist->nom_distrito; ?>?')" class="btn btn-danger btn-sm"><span class="fas fa-fw fa-trash-alt"></span></a>
+        <a href="<?php echo base_url();?>administrador/observaciones/eliminar/<?php echo $observacion->id_obs;?>" onClick="return confirm('Desea Desactivar la Observacion <?php echo $observacion->nom_observaciones; ?>?')" class="btn btn-danger btn-sm"><span class="fas fa-fw fa-trash-alt"></span></a>
 
                       </td>
                     </tr>
@@ -84,21 +82,16 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalCenterTitle">Registro de Observaciones</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <form action="<?php echo base_url();?>administrador/distritos/guardar" method="POST">
+              <form action="<?php echo base_url();?>administrador/observaciones/guardar" method="POST">
                   <div class="form-group <?php echo form_error('nombre') ? 'has-error' : '' ?>">
-                    <label class="control-label"> Nombre del Distrito:</label>
-                    <input name="nombre" placeholder="Nuevo Distrito" class="form-control">
-                  </div>
-
-                  <div class="form-group <?php echo form_error('descripcion') ? 'has-error' : '' ?>">
-                    <label class="control-label">Descripcion:</label>
-                    <input name="descripcion" class="form-control" placeholder="Descripcion..."></textarea>
+                    <label class="control-label"> Nombre de la Observacion:</label>
+                    <input name="nombre" placeholder="Nueva Observacion" class="form-control">
                   </div>
 
             </div>

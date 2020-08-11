@@ -17,17 +17,8 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!--plugin para trabajar con vue js
-  <script src="<?php echo base_url();?>assets/js/vue.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/axios.min.js"></script>-->
-
   <!--plugin para trabajar con jquery y cuadros Estiditicos-->
   <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
-  <script src="<?php echo base_url();?>assets/js/Chart.js"></script>
-
-  <!--plugin para trabajar Validar Formularios-->
-  <script src="<?php echo base_url();?>assets/js/jquery.validate.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.steps.js"></script>
 
   <!-- Plugins Para La Funciondalidad Estetica del Template-->
   <script src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -42,15 +33,22 @@
   <!-- Script de Funciones javascript -->
   <script src="<?php echo base_url();?>assets/js/crud_gestion.js"></script>
   <script src="<?php echo base_url();?>assets/js/app.js"></script>
-  <script src="<?php echo base_url();?>assets/js/wizard.js"></script>
-  <script src="<?php echo base_url();?>assets/js/estadistica.js"></script>
-  <!-- Script de Funciones javascript echo VUEJS
-  <script src="<?php echo base_url();?>assets/js/script.js"></script>-->
+  <script src="<?php echo base_url();?>assets/js/mapatabla.js"></script>
+
 
 <script type="text/javascript">
 <?php if($this->session->flashdata('msg_success')){ ?>
     toastr.success("<?php echo $this->session->flashdata('msg_success'); ?>");
 <?php } ?>
+</script>
+
+<script type="text/javascript">
+function datos_marker(lat, lng, marker)
+   {
+    var mi_marker = new google.maps.LatLng(lat, lng);
+    map.panTo(mi_marker);
+    google.maps.event.trigger(marker, 'click');
+   }
 </script>
 
 </body>
